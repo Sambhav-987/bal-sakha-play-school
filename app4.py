@@ -18,6 +18,23 @@ class Admission(db.Model):
     address = db.Column(db.Text)
     student_class = db.Column(db.String(20))
 
+
+class Student(db.Model):
+
+    id = db.Column(db.Integer, primary_key=True)
+
+    student_id = db.Column(db.String(20), unique=True)
+
+    student_name = db.Column(db.String(100))
+
+    father_name = db.Column(db.String(100))
+
+    phone = db.Column(db.String(20))
+
+    student_class = db.Column(db.String(20))
+
+    monthly_fee = db.Column(db.Integer, default=1000)
+
 @app.route("/")
 def home():
     return render_template("home.html")
