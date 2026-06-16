@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
+
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Fee Records</title>
 
@@ -12,13 +16,49 @@
 
 <body>
 
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<div class="container">
+
+<a class="navbar-brand" href="/">
+Bal Sakha Play School
+</a>
+
+<div class="d-flex gap-2">
+
+<a href="/" class="btn btn-light btn-sm">Home</a>
+
+<a href="/admission" class="btn btn-light btn-sm">Admission</a>
+
+<a href="/parent" class="btn btn-light btn-sm">Parent Portal</a>
+
+<a href="/login" class="btn btn-light btn-sm">Admin Login</a>
+
+<a href="/students" class="btn btn-light btn-sm">Students</a>
+
+<a href="/fees" class="btn btn-light btn-sm">Fees</a>
+
+</div>
+
+</div>
+</nav>
+
 <div class="container mt-5">
 
-<h1>Bal Sakha Play School</h1>
+<h1 class="text-center">
+Bal Sakha Play School
+</h1>
 
-<h3>Fee Records</h3>
+<h3 class="text-center mb-4">
+Fee Records
+</h3>
 
-<table class="table table-bordered">
+<div class="card shadow">
+
+<div class="card-body">
+
+<table class="table table-bordered table-striped">
+
+<thead>
 
 <tr>
 
@@ -31,6 +71,10 @@
 <th>Receipt</th>
 
 </tr>
+
+</thead>
+
+<tbody>
 
 {% for f in fees %}
 
@@ -46,29 +90,42 @@
 
 <td>{{ f.status }}</td>
 
-<td>{{ f.status }}</td>
-
 <td>
-    <a href="/payfee/{{ f.id }}"
-       class="btn btn-success btn-sm">
-       Mark Paid
-    </a>
+
+<a href="/payfee/{{ f.id }}"
+class="btn btn-success btn-sm">
+
+Mark Paid
+
+</a>
+
 </td>
 
 <td>
-    <a href="/receipt/{{ f.id }}"
-       class="btn btn-primary btn-sm">
-       View Receipt
-    </a>
+
+<a href="/receipt/{{ f.id }}"
+class="btn btn-primary btn-sm">
+
+View Receipt
+
+</a>
+
 </td>
 
 </tr>
 
 {% endfor %}
 
+</tbody>
+
 </table>
 
 </div>
 
+</div>
+
+</div>
+
 </body>
+
 </html>
